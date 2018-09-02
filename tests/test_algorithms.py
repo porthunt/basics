@@ -1,11 +1,13 @@
+import pytest
 import random
 
 from algorithms.sort.bubblesort import bubblesort
 
 
-def test_bubble_sort():
-    list_size = random.randint(1, 100)
-    unsorted_list = []
-    for _ in range(0, list_size):
-        unsorted_list.append(random.randint(1, 999))
-    assert bubblesort(unsorted_list) == sorted(unsorted_list)
+@pytest.fixture
+def random_list():
+    return [random.randint(1, 999) for _ in range(0, random.randint(1, 100))]
+
+
+def test_bubble_sort(random_list):
+    assert bubblesort(random_list) == sorted(random_list)
