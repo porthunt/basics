@@ -2,6 +2,7 @@ import pytest
 import random
 
 from algorithms.sort.bubblesort import bubblesort
+from algorithms.sort.mergesort import mergesort
 
 
 @pytest.fixture
@@ -11,3 +12,7 @@ def random_list():
 
 def test_bubble_sort(random_list):
     assert bubblesort(random_list) == sorted(random_list)
+
+
+def test_merge_sort(random_list):
+    assert mergesort(random_list) == sorted(random_list)
