@@ -1,5 +1,15 @@
 
 def merge(l_left, l_right):
+    """
+    Helper function to merge the left and right lists based on their order,
+    so if we have [4, 2] on right and [3, 1] on left, the left part will:
+        [2, 4] and [1, 3]
+    finally, when merging these two
+        [1, 2, 3, 4]
+    :param l_left: a list from the left side of your previous list.
+    :param l_right: a list from the right side of your previous list.
+    :return: the merged left and right lists merged by their order.
+    """
     merged = []
     l_index = r_index = 0
     while l_index < len(l_left) and r_index < len(l_right):
@@ -25,10 +35,10 @@ def mergesort(a_list):
         1st split: [3, 5], [1, 4, 2] (it doesn't matter where we split, it could be [3, 5, 1], [4, 2] as well).
         2nd split: [3], [5], [1], [4, 2]
         3rd split: [3], [5], [1], [4], [2]
-        ... now we reconstruct
-        1st reconstruct: [3, 5], [1, 4], [2]
-        2nd reconstruct: [3, 5], [1, 2, 4]
-        3rd reconstruct: [1, 2, 3, 4, 5]
+        ... now we merge
+        1st merge: [3, 5], [1, 4], [2]
+        2nd merge: [3, 5], [1, 2, 4]
+        3rd merge: [1, 2, 3, 4, 5]
     .. best case:: n logn.
     .. worst case:: n logn.
     :param a_list: a list with numbers.
