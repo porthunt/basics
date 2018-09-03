@@ -1,5 +1,15 @@
 
 def merge(l_left, l_right):
+    """
+    Helper function to merge the left and right lists based on their order,
+    so if we have [4, 2] on right and [3, 1] on left, the left part will:
+        [2, 4] and [1, 3]
+    finally, when merging these two
+        [1, 2, 3, 4]
+    :param l_left: a list from the left side of your previous list.
+    :param l_right: a list from the right side of your previous list.
+    :return: the merged left and right lists merged by their order.
+    """
     merged = []
     l_index = r_index = 0
     while l_index < len(l_left) and r_index < len(l_right):
