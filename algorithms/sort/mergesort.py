@@ -44,7 +44,7 @@ def mergesort(a_list):
     :param a_list: a list with numbers.
     :return: a list with the elements sorted (asc -> desc).
     """
-    half = int(len(a_list) / 2)
+    half = len(a_list) // 2
     if len(a_list) <= 1:
         return a_list
 
