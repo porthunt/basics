@@ -1,5 +1,5 @@
 
-def bubblesort(a_list):
+def bubblesort(a_list: list) -> list:
     """
     The Bubble sort algorithm is the most naive one that we can create. The idea around this algorithm
     is comparing each two elements on the list and swapping them in case one is bigger than the other.

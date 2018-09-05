@@ -1,5 +1,5 @@
 
-def merge(l_left, l_right):
+def merge(l_left: list, l_right: list) -> list:
     """
     Helper function to merge the left and right lists based on their order,
     so if we have [4, 2] on right and [3, 1] on left, the left part will:
@@ -24,7 +24,7 @@ def merge(l_left, l_right):
     return merged
 
 
-def mergesort(a_list):
+def mergesort(a_list: list) -> list:
     """
     The Merge sort algorithm is based on a divide and conquer strategy. The algorithm involves splitting
     the lists by half till we have just lists with one element. Then, we rearrange the smaller chunks comparing

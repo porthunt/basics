@@ -1,5 +1,5 @@
 
-def binary_search(a_list, n):
+def binary_search(a_list: list, n: int) -> int:
     """
     The Binary Search algorithm is a search algorithm that looks splits
     the list into smaller ones till it finds the element.
