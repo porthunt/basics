@@ -29,7 +29,12 @@ class LinkedList:
         Method to return the size of the list.
         :return: the size of the list (i.e. the number of elements in it) as an integer.
         """
-        pass
+        elements = 0
+        current = self.TAIL
+        while current is not None:
+            elements += 1
+            current = self.TAIL.pointer
+        return elements
 
     def insert(self, nid: int) -> bool:
         """

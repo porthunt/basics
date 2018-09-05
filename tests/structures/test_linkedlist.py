@@ -8,8 +8,10 @@ def linked_list():
     return LinkedList()
 
 
-def ignore_size(linked_list):
+def test_size(linked_list):
     assert linked_list.size() == 0
+    linked_list.insert(3)
+    assert linked_list.size() == 1
 
 
 def test_insert(linked_list):
@@ -32,7 +34,7 @@ def ignore_search_not_found(linked_list):
         assert "not in list" in str(e.value)
 
 
-def test_show(linked_list):
+def test_str(linked_list):
     linked_list.insert(6)
     assert str(linked_list) == "<6>"
     linked_list.insert(8)
