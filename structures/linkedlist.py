@@ -33,7 +33,7 @@ class LinkedList:
         current = self.TAIL
         while current is not None:
             elements += 1
-            current = self.TAIL.pointer
+            current = current.pointer
         return elements
 
     def insert(self, nid: int) -> bool:
@@ -58,7 +58,19 @@ class LinkedList:
         :return: boolean True in case the element is added to the list.
         :raise ValueError: in case nid is not on the list.
         """
-        pass
+        current = self.TAIL
+        last = None
+        while current is not None:
+            if current.nid == nid:
+                if last is None:
+                    self.TAIL = current.pointer
+                else:
+                    last.pointer = current.pointer
+                    self.TAIL = last
+                return True
+            last = current
+            current = current.pointer
+        raise ValueError("{} not in list".format(nid))
 
     def search(self, nid: int) -> bool:
         """
@@ -67,13 +79,18 @@ class LinkedList:
         :return: boolean True in case the element was found.
         :raise ValueError: in case nid is not on the list.
         """
-        pass
+        current = self.TAIL
+        while current is not None:
+            if current.nid == nid:
+                return True
+            current = current.pointer
+        raise ValueError("{} not in list".format(nid))
 
     def __str__(self):
         current = self.TAIL
         out = ""
         while current is not None:
             out += "{nid}".format(nid=current.nid)
-            current = self.TAIL.pointer
+            current = current.pointer
             out += ", " if current else ""
         return "<{out}>".format(out=out)
