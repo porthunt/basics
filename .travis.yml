@@ -8,5 +8,7 @@ python:
 - 3.6-dev
 - 3.7-dev
 - nightly
-install: pip install -r requirements.txt
 script: py.test
+addons:
+  code_climate:
+    repo_token: f4f62d5cd131903c716e08b7c9c23135f6855c40ca85e9eff7cad1702f30f85f
